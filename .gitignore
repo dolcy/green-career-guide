@@ -27,11 +27,15 @@ user/accounts/*
 user/data/*
 !user/data/.*
 user/plugins/*
-!user/plugins/.*
+!user/plugins/.*s
 user/themes/*
 !user/themes/.*
 user/localhost/config/security.yaml
 user/config/security.yaml
+
+# Grav Admin
+grav-admin/*
+!grav-admin/.*
 
 # OS Generated
 .DS_Store*

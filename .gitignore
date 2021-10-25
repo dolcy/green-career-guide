@@ -1,23 +1,53 @@
-/vendor/
+# Composer
+.composer
+vendor/*
+!*/vendor/*
+
+# Node
 node_modules/
 npm-debug.log
 yarn-error.log
 
-# Laravel 4 specific
-bootstrap/compiled.php
-app/storage/
+# Sass
+.sass-cache
 
-# Laravel 5 & Lumen specific
-public/storage
-public/hot
+# Grav Specific
+backup/*
+!backup/.*
+cache/*
+!cache/.*
+assets/*
+!assets/.*
+logs/*
+!logs/.*
+images/*
+!images/.*
+user/accounts/*
+!user/accounts/.*
+user/data/*
+!user/data/.*
+user/plugins/*
+!user/plugins/.*
+user/themes/*
+!user/themes/.*
+user/localhost/config/security.yaml
+user/config/security.yaml
 
-# Laravel 5 & Lumen specific with changed public path
-public_html/storage
-public_html/hot
+# OS Generated
+.DS_Store*
+ehthumbs.db
+Icon?
+Thumbs.db
+*.swp
 
-storage/*.key
-.env
-Homestead.yaml
-Homestead.json
-/.vagrant
-.phpunit.result.cache
+# phpstorm
+.idea/*
+
+# testing stuff
+tests/_output/*
+tests/_support/_generated/*
+tests/cache/*
+tests/error.log
+system/templates/testing/*
+/user/config/versions.yaml
+/user/cli/config/security.yaml

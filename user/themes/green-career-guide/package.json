@@ -1,0 +1,16 @@
+{
+  "name": "green-career-guide",
+  "version": "1.0.0",
+  "description": "Sustainable theme for Green Career Guide microsite.",
+  "main": "index.js",
+  "author": "Shaughn Dolcy",
+  "license": "MIT",
+  "scripts": {
+    "scss": "node-sass --watch scss -o css"
+  },
+  "private": true,
+  "dependencies": {
+    "cirrus-ui": "^0.6.0",
+    "node-sass": "^5.0.0"
+  }
+}

@@ -1,0 +1,281 @@
+{% set theme_config = attribute(config.themes, config.system.pages.theme) %}
+<!DOCTYPE html>
+<html lang="{{ (grav.language.getActive ?: grav.config.site.default_lang)|e }}">
+	<head>
+		{% block head %}
+			<meta charset="utf-8"/>
+			<title>
+				{% if header.title %}
+					{{ header.title|e }}
+					|
+				{% endif %}
+				{{ site.title|e }}</title>
+
+			<meta http-equiv="X-UA-Compatible" content="IE=edge">
+			<meta name="viewport" content="width=device-width, initial-scale=1">
+			{% include 'partials/metadata.html.twig' %}
+			<link rel="icon" type="image/png" href="{{ url('theme://images/favicon.png')|e }}"/>
+			<link rel="canonical" href="{{ page.url(true, true)|e }}"/>
+			<link rel="stylesheet" href="{{ url('https://fonts.googleapis.com/css?family=Nunito+Sans:200,300,400,600,700')|e }}"/>
+			<link rel="stylesheet" href="{{ url('https://fonts.googleapis.com/css?family=Montserrat:400,700')|e }}"/>
+		{% endblock head %}
+
+		{% block stylesheets %}
+			{% do assets.addCss('theme://node_modules/cirrus-ui/dist/cirrus.min.css', 100) %}
+			{% do assets.addCss('theme://css/custom.css', 98) %}
+		{% endblock %}
+
+		{% block javascripts %}
+			{% do assets.add('https://code.jquery.com/jquery-2.2.4.min.js', 101) %}
+			{% do assets.add('https://kit.fontawesome.com/689ec33b9c.js', 99) %}
+		{% endblock %}
+
+		{% block assets deferred %}
+			{{ assets.css()|raw }}
+			{{ assets.js()|raw }}
+		{% endblock %}
+
+	</head>
+	<body id="top" class="{{ page.header.body_classes|e }}">
+		<div class="bg-gray-200">
+			<div class="content px-4">
+				{% block header %}
+					<div class="header header-animated">
+						<div class="header-brand">
+							<div class="nav-item no-hover">
+								<a class="p-0 m-0" href="#">
+									<img style="width: 140px" src="{{ theme_url }}/images/logo.png" alt="The HOPE Program">
+								</a>
+							</div>
+							<div class="nav-item nav-btn" id="header-btn">
+								<span></span>
+								<span></span>
+								<span></span>
+							</div>
+						</div>
+						<div class="header-nav" id="header-menu">
+							<div class="nav-right">
+								<span class="p-1 u-block">
+									<a class="u u-LR text-gray-700" href="#hvac-careers" alt="HVAC Careers" title="HVAC Careers">HVAC Careers</a>
+								</span>
+								<span class="p-1 u-block">
+									<a class="u u-LR text-gray-700" href="#syllabus" alt="Course Syllabus" title="Course Syllabus">Course Syllabus</a>
+								</span>
+								<span class="p-1 u-block">
+									<a class="u u-LR text-gray-700" href="#certifications" alt="Certifications" title="Certifications">Certifications</a>
+								</span>
+								<span class="p-1 u-block">
+									<a class="u u-LR text-gray-700" href="#resources" alt="Resources" title="Resources">Resources</a>
+								</span>
+							</div>
+						</div>
+					</div>
+				{% endblock %}
+
+				{% block body %}
+					<div id="hero-splash" class="hero hero-img parallax-img">
+						<div class="hero-body px-0">
+							<div class="content level fill-height">
+								<div class="level-content p-4">
+									<div class="row level-item">
+										<div class="col-12 pr-2">
+											<h2 class="font-normal mb-0 p-0">
+												<mark class="text-gray-700 mark-title-nudge">Green
+													<span class="text-orange-400">&amp;</span>
+													Clean</mark>
+											</h2>
+											<h1 class="title font-bold m-0">
+												<mark class="text-gray-700">
+													<span class="text-orange-400">HVAC Training Program</span>
+												</mark>
+											</h1>
+											<h4 class="white subtitle font-light faded mb-6 mt-3">
+											<mark class="mark-subtitle-nudge">The HOPE Program's Guide to HVAC and Green Careers</mark>
+											</h4>
+											<a class="font-normal font-alt p-0" href="#" alt="Download Guide" title="Download Guide">
+												<button class="btn btn-primary btn-xlarge white">
+													<b>Download Guide</b>
+													<i class="fa-wrapper fa fa-download pl-1" style="color: #fffde4;"></i>
+												</button>
+											</a>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<main>
+						{#call-to-action #}
+						<section class="hero bg-info u-text-center mb-4">
+							<div class="hero-body">
+								<div class="content p-4">
+									{{ page.find('/home/_call-to-action').content() }}
+								</div>
+							</div>
+						</section>
+
+						{# hvac careers #}
+						<section class="bg-gray-300 mb-4">
+							<article>
+								<h2 id="hvac-careers" class="pl-2 pt-2 text-gray-700 font-alt">HVAC Careers</h2>
+								<div class="content p-4 bg-gray-000">
+									{% for p in pages.find('/hvac-careers').children if p != page %}
+										<div class="tile p-2 bg-gray-100 u-round mb-2">
+											<div class="tile__container">
+												<h5 class="tile__title m-0 py-2 pl-1 bg-gray-300 text-gray-600 font-alt">{{ p.title|e }}</h5>
+
+												<p class="tile__subtitle lead m-0 py-2 pl-1 font-alt">{{ p.content|raw }}</p>
+
+												<span class="info px-2 u-text-right">
+													<em>Posted on
+														{{ p.date|date('m/d/Y') }}</em>
+												</span>
+											</div>
+										</div>
+									{% endfor %}
+								</div>
+							</article>
+						</section>
+						{# course syllabus #}
+						<section class="bg-gray-300 mb-4">
+							<article>
+								<h2 id="syllabus" class="pl-2 pt-2 text-gray-700 font-alt">Course Syllabus</h2>
+								<div class="content p-4 bg-gray-000">
+									{% for p in pages.find('/course-syllabus').children if p != page %}
+										<div class="tile p-2 bg-gray-100 u-round mb-2">
+											<div class="tile__container">
+												<h5 class="tile__title m-0 py-2 pl-1 bg-gray-300 text-gray-600 font-alt">{{ p.title|e }}</h5>
+
+												<p class="tile__subtitle lead m-0 py-2 pl-1 font-alt">{{ p.content|raw }}</p>
+
+												<span class="info px-2 u-text-right">
+													<em>Posted on
+														{{ p.date|date('m/d/Y') }}</em>
+												</span>
+											</div>
+										</div>
+									{% endfor %}
+								</div>
+							</article>
+						</section>
+						{# certifications #}
+						<section class="bg-gray-300 mb-4">
+							<article>
+								<h2 id="certifications" class="pl-2 pt-2 text-gray-700 font-alt">Certifications</h2>
+								<div class="content p-4 bg-gray-000">
+									{% for p in pages.find('/certifications').children if p != page %}
+										<div class="tile p-2 bg-gray-100 u-round mb-2">
+											<div class="tile__container">
+												<h5 class="tile__title m-0 py-2 pl-1 bg-gray-300 text-gray-600 font-alt">{{ p.title|e }}</h5>
+
+												<p class="tile__subtitle lead m-0 py-2 pl-1 font-alt">{{ p.content|raw }}</p>
+
+												<span class="info px-2 u-text-right">
+													<em>Posted on
+														{{ p.date|date('m/d/Y') }}</em>
+												</span>
+											</div>
+										</div>
+									{% endfor %}
+								</div>
+							</article>
+						</section>
+						{#subscribe to newsletter#}
+						<section id="subscribe" class="hero bg-gray-600 u-text-center mb-4">
+							<div class="hero-body">
+								<div class="content p-4">
+									<h4 class="white font-light font-alt pb-3 m-0">Latest developments, upcoming events and school notices.</h4>
+									<a class="p-0" href="http://eepurl.com/hpgduT" alt="Subscribe to Newsletter" title="Subscribe to Newsletter">
+										<button class="btn btn-primary btn-xlarge white">
+											<b>Subscribe<b>
+													<i class="fa-wrapper fa fa-newspaper pl-1" style="color: #fffde4;"></i>
+												</button>
+											</a>
+										</div>
+									</div>
+								</section>
+								{# resources section #}
+								<section class="bg-gray-300 mb-4">
+									<article>
+										<h2 id="resources" class="pl-2 pt-2 text-gray-700 font-alt">Resources</h2>
+										<div class="content p-4 bg-gray-000">
+											{% for p in pages.find('/resources').children if p != page %}
+												<div class="tile p-2 bg-gray-100 u-round mb-2">
+													<div class="tile__container">
+
+														<h5 class="tile__title m-0 py-2 pl-2 mb-3 bg-gray-300 font-alt">
+															<a class="text-gray-600" href="{{ p.content|striptags|e }}" alt="{{ p.title|e }}" title="{{ p.title|e }}">{{ p.title|e }}</a>
+														</h5>
+
+														<a class="btn outline btn-info" href="{{ p.content|striptags|e }}" alt="{{ p.title|e }}" title="Click to visit {{ p.title|e }} ">
+															<b>Visit Resource</b>
+															<i class="fas fa-wrapper fa-arrow-right pl-2 mb-2"></i>
+														</a>
+													</div>
+												</div>
+											{% endfor %}
+										</div>
+									</article>
+								</section>
+								<div class="back-to-top-wrapper">
+									<a href="#top" class="text-info back-to-top-link" aria-label="Scroll to Top" alt="Scroll to Top" title="Scroll to Top">
+										<span style="font-size: 48px">
+											<i class="fas fa-wrapper fa-arrow-circle-up bg-gray-000 u-circle"></i>
+										</span>
+									</a>
+								</div>
+							</main>
+						{% endblock %}
+
+						{% block footer %}
+							<footer class="footer bg-gray-200">
+								<div class="content">
+									<div class="row p-0">
+										<div class="col-6 bg-info p-4">
+											<h5 class="white pl-1 pb-1 font-alt">HVAC Tech Profiles</h5>
+											<ul class="no-bullets font-normal">
+												<li class="tag tag--info tag--large bg-gray-100 mr-1 mb-1 btn--pilled text-gray-700">Residential Trainee/Helper</li>
+												<li class="tag tag--info tag--large bg-gray-100 mr-1 mb-1 btn--pilled text-gray-700">Residential Installer</li>
+												<li class="tag tag--info tag--large bg-gray-100 mr-1 mb-1 btn--pilled text-gray-700">Commercial Trainee</li>
+												<li class="tag tag--info tag--large bg-gray-100 mr-1 mb-1 btn--pilled text-gray-700">Tradesperson</li>
+												<li class="tag tag--info tag--large bg-gray-100 mr-1 mb-1 btn--pilled text-gray-700">Commercial Installer</li>
+												<li class="tag tag--info tag--large bg-gray-100 mr-1 mb-1 btn--pilled text-gray-700">Apprentice</li>
+												<li class="tag tag--info tag--large bg-gray-100 mr-1 mb-1 btn--pilled text-gray-700">Apprentice</li>
+												<li class="tag tag--info tag--large bg-gray-100 mr-1 mb-1 btn--pilled text-gray-700">Apprentice</li>
+												<li class="tag tag--info tag--large bg-gray-100 mr-1 mb-1 btn--pilled text-gray-700">Apprentice</li>
+												<li class="tag tag--info tag--large bg-gray-100 mr-1 mb-1 btn--pilled text-gray-700">Apprentice</li>
+											</ul>
+										</div>
+										<div class="col-6 bg-gray-600 p-4">
+											<h5 class="white pl-1 pb-1 font-alt">Have a question about HVAC careers?</h5>
+											{{ page.find('/home/_team').content() }}
+											<a class="btn-small u-round bg-gray-100 u-center mt-4" href="mailto:sdolcy@thehopeprogram.org">Get In Touch
+												<i class="fa-wrapper fa fa-envelope btn-animated pl-2"></i>
+											</a>
+										</a>
+									</div>
+								</div>
+							</div>
+
+							<div class="row">
+								<div class="col-12">
+									<section class="u-text-center pt-2">
+										<p class="font-normal">Copyright ©2021 The HOPE Program - All rights reserved.</p>
+									</p>
+								</section>
+							</div>
+
+						</div>
+					</footer>
+				{% endblock %}
+
+				{% block bottom %}
+					{% do assets.addJs('theme://js/toggle.js') %}
+					{{ assets.js()|raw }}
+					{{ assets.js('bottom')|raw }}
+				{% endblock %}
+			</body>
+		</html>
+	</body>
+</html></body></html>

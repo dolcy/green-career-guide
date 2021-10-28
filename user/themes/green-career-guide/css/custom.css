@@ -1,0 +1,176 @@
+/* cirrus ui root mods */
+:root {
+  --cirrus-primary: #00a290;
+  --cirrus-accent-border: #e1e2e4;
+  --cirrus-accent-hover: #ff8c00;
+  --cirrus-info: #00a290;
+  --cirrus-link: #00a290;
+  --cirrus-link-dark: #00a290;
+  --cirrus-info-hover: #ff8c00;
+}
+
+/* cirrus general mods */
+.content {
+  max-width: 72em;
+  margin: 0 auto 0;
+  width: 100%;
+}
+
+article p,
+article h2,
+article h3,
+article h4,
+article h5 {
+  font-family: Nunito Sans;
+  color: #495057;
+}
+
+.header {
+  margin-bottom: 0;
+  padding: 0.5rem 2rem;
+}
+
+.header .header-brand .nav-item:first-child {
+  padding: 0 0.7rem;
+}
+
+.header .nav-right {
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  -ms-grid-row-align: center;
+  align-items: center;
+}
+
+.header-nav {
+  -ms-overflow-style: none;
+  /* IE and Edge */
+  scrollbar-width: none;
+  /* Firefox */
+  overflow-y: scroll;
+  overflow-x: hidden;
+}
+
+.header .header-nav.active {
+  height: 20vh;
+}
+
+#hero-splash {
+  background: url(../images/gcg_header.png);
+  background-attachment: scroll;
+  background-size: cover;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-repeat: no-repeat;
+  height: 100%;
+  width: 100%;
+}
+
+.mark,
+mark {
+  background-color: #fffde4;
+  display: inline;
+  padding: 0.2rem 0.05rem;
+  box-shadow: 0.2em 0 0 #fffde4, -0.2em 0 0 #fffde4;
+  box-decoration-break: clone;
+}
+
+.mark-title-nudge {
+  margin: 0;
+  position: relative;
+  left: -0.1rem;
+}
+
+.mark-subtitle-nudge {
+  margin: 0;
+  line-height: 2rem;
+  position: relative;
+  left: -0.2rem;
+}
+
+.divider {
+  border-top: 0.05rem solid white;
+  height: 0.1rem;
+  margin: 0;
+  position: relative;
+}
+
+.tag.tag--large {
+  font-size: 100%;
+  padding: 0.5rem 1rem;
+}
+
+.tile p {
+  font-size: 1.1rem;
+}
+
+.team ul li {
+  list-style: none;
+  color: white;
+  text-align: left;
+  font-weight: 400;
+  margin: 0;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+main {
+  position: relative;
+  margin: 2rem auto;
+}
+main *:last-child {
+  margin-bottom: 0;
+}
+
+.back-to-top-wrapper {
+  position: absolute;
+  top: 60vh;
+  right: 0.25rem;
+  bottom: -5em;
+  width: 3em;
+  pointer-events: none;
+}
+
+.back-to-top-link {
+  position: fixed;
+  position: sticky;
+  pointer-events: all;
+  top: calc(100vh - 20rem);
+  display: inline-block;
+  text-decoration: none;
+  transition: transform 80ms ease-in;
+}
+.back-to-top-link:hover,
+.back-to-top-link:focus {
+  transform: scale(1.1);
+}
+.back-to-top-link:focus {
+  outline: none;
+}
+
+.footer {
+  margin-top: 0;
+  padding: 0;
+  text-align: unset;
+}
+
+/**
+ * Smooth scrolling on the whole document
+ */
+html {
+  scroll-behavior: smooth;
+}
+
+@media screen and (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}

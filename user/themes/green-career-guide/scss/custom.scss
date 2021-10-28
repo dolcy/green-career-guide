@@ -1,0 +1,192 @@
+/* cirrus ui root mods */
+:root {
+	--cirrus-primary: #eb6e80;
+	--cirrus-accent-border: #dee2e6;
+	--cirrus-accent-hover: #e6b562;
+	--cirrus-info: #eb6e80;
+	--cirrus-link: #eb6e80;
+	--cirrus-link-dark: #eb6e80;
+	--cirrus-info-hover: #ef8174;
+}
+
+/* cirrus general mods */
+.content {
+	max-width: 72em;
+	margin: 0 auto 0;
+	width: 100%;
+}
+
+article p,
+article h2,
+article h3,
+article h4,
+article h5 {
+	font-family: Nunito Sans;
+	color: #495057;
+}
+
+.header {
+	margin-bottom: 0;
+}
+
+.header .header-brand .nav-item:first-child {
+	padding: 0 0.7rem;
+}
+
+.header .nav-right {
+	-webkit-box-align: center;
+	-ms-flex-align: center;
+	-ms-grid-row-align: center;
+	align-items: center;
+}
+
+.header-nav {
+	-ms-overflow-style: none; /* IE and Edge */
+	scrollbar-width: none; /* Firefox */
+	overflow-y: scroll;
+	overflow-x: hidden;
+}
+
+.header .header-nav.active {
+	height: 20vh;
+}
+
+#hero-splash {
+	background: url(../images/pta_header.png);
+	background-attachment: scroll;
+	background-size: cover;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-repeat: no-repeat;
+	height: 100%;
+	width: 100%;
+}
+.hero-image {
+	-webkit-transform: rotate(10deg);
+	-moz-transform: rotate(10deg);
+	-ms-transform: rotate(10deg);
+	-o-transform: rotate(10deg);
+	transform: rotate(10deg);
+}
+
+.mark,
+mark {
+	padding: 0;
+	background-color: #f0e8c4;
+	line-height: 3rem;
+	color: #495057;
+	display: inline;
+	padding: 0;
+	background-color: #f0e8c4;
+	box-shadow: 0.2em 0 0 #f0e8c4, -0.2em 0 0 #f0e8c4;
+	box-decoration-break: clone;
+}
+
+.divider {
+	border-top: 0.05rem solid white;
+	height: 0.1rem;
+	margin: 0;
+	position: relative;
+}
+
+.tag.tag--large {
+	font-size: 100%;
+	padding: 0.5rem 1rem;
+}
+
+.tile p {
+	font-size: 1.1rem;
+}
+
+.team ul li {
+	list-style: none;
+	color: white;
+	text-align: left;
+	font-weight: 400;
+	margin: 0;
+}
+
+// How far of a scroll travel within <main> prior to the
+// link appearing
+$scrollLength: 60vh;
+
+* {
+	box-sizing: border-box;
+}
+
+// Smooth scrolling IF user doesn't have a preference due to motion sensitivities
+@media (prefers-reduced-motion: no-preference) {
+	html {
+		scroll-behavior: smooth;
+	}
+}
+
+main {
+	// required to make sure the `absolute` positioning of
+	// the anchor wrapper is indeed `relative` to this element vs. the body
+	position: relative;
+	margin: 2rem auto;
+
+	// Optional, clears margin if last element is a block item
+	*:last-child {
+		margin-bottom: 0;
+	}
+}
+
+.back-to-top-wrapper {
+	// uncomment to visualize "track"
+	// outline: 1px solid red;
+	position: absolute;
+	top: $scrollLength;
+	right: 0.25rem;
+	bottom: -5em;
+	width: 3em;
+	pointer-events: none;
+}
+
+.back-to-top-link {
+	// `fixed` is fallback
+	position: fixed;
+	// preferred positioning, requires prefixing for most support, and not supported on Safari
+	// @link https://caniuse.com/#search=position%3A%20sticky
+	position: sticky;
+	// reinstate clicks
+	pointer-events: all;
+	// achieves desired positioning within the viewport
+	// relative to the top of the viewport once `sticky` takes over, or always if `fixed` fallback is used
+	top: calc(100vh - 20rem);
+
+	// basic styling
+	display: inline-block;
+	text-decoration: none;
+	transition: transform 80ms ease-in;
+
+	&:hover,
+	&:focus {
+		transform: scale(1.1);
+	}
+
+	&:focus {
+		outline: none;
+	}
+}
+
+.footer {
+	margin-top: 0;
+	padding: 0;
+	text-align: unset;
+}
+
+/**
+ * Smooth scrolling on the whole document
+ */
+html {
+	scroll-behavior: smooth;
+}
+
+@media screen and (prefers-reduced-motion: reduce) {
+	html {
+		scroll-behavior: auto;
+	}
+}

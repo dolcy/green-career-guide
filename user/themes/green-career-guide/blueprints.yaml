@@ -1,0 +1,19 @@
+name: Green Career Guide
+slug: green-career-guide
+type: theme
+version: 1.0.0
+description: Sustainable theme for Green Career Guide microsite. 
+icon: envira
+author:
+  name: Shaughn Dolcy
+  email: sdolcy@thehopeprogram.org
+  url: https://www.thehopeprogram.org/
+homepage: https://www.greencareerguide.org/
+demo:
+docs: https://github.com/dolcy/green-career-guide
+keywords:
+bugs: https://github.com/dolcy/green-career-guide
+license: MIT
+
+dependencies:
+  - { name: grav, version: '>=1.6.0' }

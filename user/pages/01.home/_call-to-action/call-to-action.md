@@ -6,4 +6,4 @@ process:
     markdown: false
 ---
 
-This is a test!
+Green & Clean HVAC Training is an eleven-week program preparing jobseekers for careers in high efficiency heating, ventilation, and air conditioning, with a focus on heat pumps and energy efficient technology.

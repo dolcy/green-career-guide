@@ -1,0 +1,62 @@
+title: Page Content
+@extends: 
+  type: default
+  context: blueprints://pages
+
+form:
+  fields:
+    tabs:
+      type: tabs
+      active: 1
+
+      fields:
+        content:
+          type: tab
+
+          #
+          # Add your custom fields here.
+          # These fields will be available in the page's Content tab
+          # inside the Admin Panel.
+          #
+          fields:
+
+            #
+            # Career Type Text Field
+            #
+            header.custom.careerType:
+              type: text
+              label: Career Type
+            #
+            # Career Link Text Field
+            #
+            header.custom.careerLink:
+              type: text
+              label: Career Link
+
+            #
+            # Requirements Text Field
+            #
+            header.custom.requirements:
+              type: text
+              label: Requirements
+
+            #
+            # Certifications Text Field
+            #
+            header.custom.certifications:
+              type: text
+              label: Certifications Needed
+
+                      #
+            # Driver License Text Field
+            #
+            header.custom.license:
+              type: text
+              label: Driver's License
+
+            #
+            # Salary Text Field
+            #
+            header.custom.salary:
+              type: text
+              label: Salary Range

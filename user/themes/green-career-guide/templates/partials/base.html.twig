@@ -126,11 +126,6 @@
 												<h5 class="tile__title m-0 py-2 pl-1 bg-gray-300 text-gray-600 font-alt">{{ p.title|e }}</h5>
 
 												<p class="tile__subtitle lead m-0 py-2 pl-1 font-alt">{{ p.content|raw }}</p>
-
-												<span class="info px-2 u-text-right">
-													<em>Posted on
-														{{ p.date|date('m/d/Y') }}</em>
-												</span>
 											</div>
 										</div>
 									{% endfor %}
@@ -148,11 +143,6 @@
 												<h5 class="tile__title m-0 py-2 pl-1 bg-gray-300 text-gray-600 font-alt">{{ p.title|e }}</h5>
 
 												<p class="tile__subtitle lead m-0 py-2 pl-1 font-alt">{{ p.content|raw }}</p>
-
-												<span class="info px-2 u-text-right">
-													<em>Posted on
-														{{ p.date|date('m/d/Y') }}</em>
-												</span>
 											</div>
 										</div>
 									{% endfor %}
@@ -170,11 +160,6 @@
 												<h5 class="tile__title m-0 py-2 pl-1 bg-gray-300 text-gray-600 font-alt">{{ p.title|e }}</h5>
 
 												<p class="tile__subtitle lead m-0 py-2 pl-1 font-alt">{{ p.content|raw }}</p>
-
-												<span class="info px-2 u-text-right">
-													<em>Posted on
-														{{ p.date|date('m/d/Y') }}</em>
-												</span>
 											</div>
 										</div>
 									{% endfor %}
@@ -182,7 +167,7 @@
 							</article>
 						</section>
 						{#subscribe to newsletter#}
-						<section id="subscribe" class="hero bg-gray-600 u-text-center mb-4">
+						{# <section id="subscribe" class="hero bg-gray-600 u-text-center mb-4">
 							<div class="hero-body">
 								<div class="content p-4">
 									<h4 class="white font-light font-alt pb-3 m-0">Latest developments, upcoming events and school notices.</h4>
@@ -194,7 +179,7 @@
 											</a>
 										</div>
 									</div>
-								</section>
+								</section> #}
 								{# resources section #}
 								<section class="bg-gray-300 mb-4">
 									<article>

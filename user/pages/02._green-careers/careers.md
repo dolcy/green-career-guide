@@ -1,5 +1,5 @@
 ---
-title: 'HVAC Careers'
+title: 'Green Careers'
 content:
     items: '@self.modular'
 ---

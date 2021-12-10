@@ -1,5 +1,5 @@
 ---
-title: 'Residential Trainee/Helper'
+title: 'Agriculture and forestry'
 custom:
     careerType: Residential
     careerLink: 'https://hvaccareermap.org/jobs/residential-trainee'
@@ -9,4 +9,4 @@ custom:
     salary: '$36,000-$44,000; $18-$22/hr'
 ---
 
-Residential Trainees assist lead installers with the installation of various types of residential HVAC equipment and accessories.
+Includes careers related to using natural pesticides, efficient land management or farming, and aquaculture.

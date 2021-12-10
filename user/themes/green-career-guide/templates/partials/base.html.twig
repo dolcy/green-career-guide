@@ -62,6 +62,9 @@
 									<a class="u u-LR text-gray-700" href="#jobs" alt="Jobs" title="Jobs">Jobs</a>
 								</span>
 								<span class="p-1 u-block">
+									<a class="u u-LR text-gray-700" href="#partnerships" alt="Partnerships" title="Partnerships">Partnerships</a>
+								</span>
+								<span class="p-1 u-block">
 									<a class="u u-LR text-gray-700" href="#certifications" alt="Certifications" title="Certifications">Certifications</a>
 								</span>
 								<span class="p-1 u-block">
@@ -90,7 +93,7 @@
 												</mark>
 											</h1>
 											<h4 class="white subtitle font-light faded mb-6 mt-3">
-											<mark class="mark-subtitle-nudge">The HOPE Program's Guide to HVAC and Green Careers</mark>
+												<mark class="mark-subtitle-nudge">The HOPE Program's Guide to HVAC and Green Careers</mark>
 											</h4>
 											<a class="font-normal font-alt p-0" href="#" alt="Download Guide" title="Download Guide">
 												<button class="btn btn-primary btn-xlarge white">
@@ -108,12 +111,18 @@
 					<main>
 						{#call-to-action #}
 						{# <section class="hero bg-info u-text-center mb-4">
-							<div class="hero-body">
-								<div class="content p-4">
-									{{ page.find('/home/_call-to-action').content() }}
-								</div>
-							</div>
-						</section> #}
+																			<div class="hero-body">
+																				<div class="content p-4">
+																					{{ page.find('/home/_call-to-action').content() }}
+																				</div>
+																			</div>
+																		</section> #}
+
+						{# search #}
+						<div class="form-group mb-4"> <label class="form-group-label label-xlarge"><i class="fa-wrapper fa fa-search pad-left"></i></label>
+							<input type="text" class="form-group-input input-xlarge" placeholder="Search green careers...">
+							<button class="form-group-btn btn-primary btn-xlarge">Go</button>
+						</div>
 
 						{# green careers #}
 						<section class="bg-gray-300 mb-4">
@@ -168,100 +177,97 @@
 						</section>
 						{#subscribe to newsletter#}
 						{# <section id="subscribe" class="hero bg-gray-600 u-text-center mb-4">
-							<div class="hero-body">
-								<div class="content p-4">
-									<h4 class="white font-light font-alt pb-3 m-0">Latest developments, upcoming events and school notices.</h4>
-									<a class="p-0" href="http://eepurl.com/hpgduT" alt="Subscribe to Newsletter" title="Subscribe to Newsletter">
-										<button class="btn btn-primary btn-xlarge white">
-											<b>Subscribe<b>
-													<i class="fa-wrapper fa fa-newspaper pl-1" style="color: #fffde4;"></i>
-												</button>
-											</a>
-										</div>
-									</div>
-								</section> #}
-								{# resources section #}
-								<section class="bg-gray-300 mb-4">
-									<article>
-										<h2 id="resources" class="pl-2 pt-2 text-gray-700 font-alt">Resources</h2>
-										<div class="content p-4 bg-gray-000">
-											{% for p in pages.find('/resources').children if p != page %}
-												<div class="tile p-2 bg-gray-100 u-round mb-2">
-													<div class="tile__container">
+																			<div class="hero-body">
+																				<div class="content p-4">
+																					<h4 class="white font-light font-alt pb-3 m-0">Latest developments, upcoming events and school notices.</h4>
+																					<a class="p-0" href="http://eepurl.com/hpgduT" alt="Subscribe to Newsletter" title="Subscribe to Newsletter">
+																						<button class="btn btn-primary btn-xlarge white">
+																							<b>Subscribe<b>
+																									<i class="fa-wrapper fa fa-newspaper pl-1" style="color: #fffde4;"></i>
+																								</button>
+																							</a>
+																						</div>
+																					</div>
+																				</section> #}
+						{# resources section #}
+							<section class="bg-gray-300 mb-4"> <article>
+								<h2 id="resources" class="pl-2 pt-2 text-gray-700 font-alt">Resources</h2>
+								<div class="content p-4 bg-gray-000">
+									{% for p in pages.find('/resources').children if p != page %}
+										<div class="tile p-2 bg-gray-100 u-round mb-2">
+											<div class="tile__container">
 
-														<h5 class="tile__title m-0 py-2 pl-2 mb-3 bg-gray-300 font-alt">
-															<a class="text-gray-600" href="{{ p.content|striptags|e }}" alt="{{ p.title|e }}" title="{{ p.title|e }}">{{ p.title|e }}</a>
-														</h5>
+												<h5 class="tile__title m-0 py-2 pl-2 mb-3 bg-gray-300 font-alt">
+													<a class="text-gray-600" href="{{ p.content|striptags|e }}" alt="{{ p.title|e }}" title="{{ p.title|e }}">{{ p.title|e }}</a>
+												</h5>
 
-														<a class="btn outline btn-info" href="{{ p.content|striptags|e }}" alt="{{ p.title|e }}" title="Click to visit {{ p.title|e }} ">
-															<b>Visit Resource</b>
-															<i class="fas fa-wrapper fa-arrow-right pl-2 mb-2"></i>
-														</a>
-													</div>
-												</div>
-											{% endfor %}
+												<a class="btn outline btn-info" href="{{ p.content|striptags|e }}" alt="{{ p.title|e }}" title="Click to visit {{ p.title|e }} ">
+													<b>Visit Resource</b>
+													<i class="fas fa-wrapper fa-arrow-right pl-2 mb-2"></i>
+												</a>
+											</div>
 										</div>
-									</article>
-								</section>
-								<div class="back-to-top-wrapper">
-									<a href="#top" class="text-info back-to-top-link" aria-label="Scroll to Top" alt="Scroll to Top" title="Scroll to Top">
-										<span style="font-size: 48px">
-											<i class="fas fa-wrapper fa-arrow-circle-up bg-gray-000 u-circle"></i>
-										</span>
-									</a>
+									{% endfor %}
 								</div>
-							</main>
-						{% endblock %}
-
-						{% block footer %}
-							<footer class="footer bg-gray-200">
-								<div class="content">
-									<div class="row p-0">
-										<div class="col-6 bg-info p-4">
-											<h5 class="white pl-1 pb-1 font-alt">Green Career Tags</h5>
-											<ul class="no-bullets font-normal">
-												<li class="tag tag--info tag--large bg-gray-100 mr-1 mb-1 btn--pilled text-gray-700">Agricultural Technician</li>
-												<li class="tag tag--info tag--large bg-gray-100 mr-1 mb-1 btn--pilled text-gray-700">HVAC Technician</li>
-												<li class="tag tag--info tag--large bg-gray-100 mr-1 mb-1 btn--pilled text-gray-700">Warehouse Operations</li>
-												<li class="tag tag--info tag--large bg-gray-100 mr-1 mb-1 btn--pilled text-gray-700">Electrician</li>
-												<li class="tag tag--info tag--large bg-gray-100 mr-1 mb-1 btn--pilled text-gray-700">E-Bike Technician</li>
-												<li class="tag tag--info tag--large bg-gray-100 mr-1 mb-1 btn--pilled text-gray-700">Recycling Coordinator</li>
-												<li class="tag tag--info tag--large bg-gray-100 mr-1 mb-1 btn--pilled text-gray-700">Hazardous Materials Removal Worker</li>
-												<li class="tag tag--info tag--large bg-gray-100 mr-1 mb-1 btn--pilled text-gray-700">Energy Auditor</li>
-													<li class="tag tag--info tag--large bg-gray-100 mr-1 mb-1 btn--pilled text-gray-700">Solar Installer</li>
-												<li class="tag tag--info tag--large bg-gray-100 mr-1 mb-1 btn--pilled text-gray-700">Refuse and Recyclable Material Collector</li>
-												<li class="tag tag--info tag--large bg-gray-100 mr-1 mb-1 btn--pilled text-gray-700">Apprentice</li>
-											</ul>
-										</div>
-										<div class="col-6 bg-gray-600 p-4">
-											<h5 class="white pl-1 pb-1 font-alt">Have a question about green careers?</h5>
-											{{ page.find('/home/_team').content() }}
-											<a class="btn-small u-round bg-gray-100 u-center mt-4" href="mailto:sdolcy@thehopeprogram.org">Get In Touch
-												<i class="fa-wrapper fa fa-envelope btn-animated pl-2"></i>
-											</a>
-										</a>
-									</div>
-								</div>
-							</div>
-
-							<div class="row">
-								<div class="col-12">
-									<section class="u-text-center pt-2">
-										<p class="font-normal">Copyright ©2021 The HOPE Program - All rights reserved.</p>
-									</p>
-								</section>
-							</div>
-
+							</article>
+						</section>
+						<div class="back-to-top-wrapper">
+							<a href="#top" class="text-info back-to-top-link" aria-label="Scroll to Top" alt="Scroll to Top" title="Scroll to Top">
+								<span style="font-size: 48px">
+									<i class="fas fa-wrapper fa-arrow-circle-up bg-gray-000 u-circle"></i>
+								</span>
+							</a>
 						</div>
-					</footer>
+					</main>
 				{% endblock %}
 
-				{% block bottom %}
-					{% do assets.addJs('theme://js/toggle.js') %}
-					{{ assets.js()|raw }}
-					{{ assets.js('bottom')|raw }}
-				{% endblock %}
-			</body>
-		</html>
+				{% block footer %}
+					<footer class="footer bg-gray-200">
+						<div class="content">
+							<div class="row p-0">
+								<div class="col-6 bg-info p-4">
+									<h5 class="white pl-1 pb-1 font-alt">Green Career Tags</h5>
+									<ul class="no-bullets font-normal">
+										<li class="tag tag--info tag--large bg-gray-100 mr-1 mb-1 btn--pilled text-gray-700">Agricultural Technician</li>
+										<li class="tag tag--info tag--large bg-gray-100 mr-1 mb-1 btn--pilled text-gray-700">HVAC Technician</li>
+										<li class="tag tag--info tag--large bg-gray-100 mr-1 mb-1 btn--pilled text-gray-700">Warehouse Operations</li>
+										<li class="tag tag--info tag--large bg-gray-100 mr-1 mb-1 btn--pilled text-gray-700">Electrician</li>
+										<li class="tag tag--info tag--large bg-gray-100 mr-1 mb-1 btn--pilled text-gray-700">E-Bike Technician</li>
+										<li class="tag tag--info tag--large bg-gray-100 mr-1 mb-1 btn--pilled text-gray-700">Recycling Coordinator</li>
+										<li class="tag tag--info tag--large bg-gray-100 mr-1 mb-1 btn--pilled text-gray-700">Hazardous Materials Removal Worker</li>
+										<li class="tag tag--info tag--large bg-gray-100 mr-1 mb-1 btn--pilled text-gray-700">Energy Auditor</li>
+										<li class="tag tag--info tag--large bg-gray-100 mr-1 mb-1 btn--pilled text-gray-700">Solar Installer</li>
+										<li class="tag tag--info tag--large bg-gray-100 mr-1 mb-1 btn--pilled text-gray-700">Refuse and Recyclable Material Collector</li>
+										<li class="tag tag--info tag--large bg-gray-100 mr-1 mb-1 btn--pilled text-gray-700">Apprentice</li>
+									</ul>
+								</div>
+								<div class="col-6 bg-gray-600 p-4">
+									<h5 class="white pl-1 pb-1 font-alt">Have a question about green careers?</h5>
+									{{ page.find('/home/_team').content() }}
+									<a class="btn-small u-round bg-gray-100 u-center mt-4" href="mailto:sdolcy@thehopeprogram.org">Get In Touch
+										<i class="fa-wrapper fa fa-envelope btn-animated pl-2"></i>
+									</a>
+								</a>
+							</div>
+						</div>
+					</div>
+
+					<div class="row">
+						<div class="col-12">
+							<section class="u-text-center pt-2">
+								<p class="font-normal">Copyright ©2021 The HOPE Program - All rights reserved.</p>
+							</p>
+						</section>
+					</div>
+
+				</div>
+			</footer>
+		{% endblock %}
+
+		{% block bottom %}
+			{% do assets.addJs('theme://js/toggle.js') %}
+			{{ assets.js()|raw }}
+			{{ assets.js('bottom')|raw }}
+		{% endblock %}
 	</body>
-</html></body></html>
+</html></body></html></body></html>

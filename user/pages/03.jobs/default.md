@@ -1,5 +1,5 @@
 ---
-title: 'Course Syllabus'
+title: Jobs
 published: true
 ---
 

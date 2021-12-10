@@ -1,5 +1,5 @@
 ---
-title: 'Warehouse Associate'
+title: 'Green Construction'
 custom:
     careerType: 'Sales and Marketing'
     careerLink: 'https://hvaccareermap.org/jobs/warehouse-associate'
@@ -10,4 +10,4 @@ custom:
 published: true
 ---
 
-Warehouse Associates receive and verify incoming shipping orders, stock shelves and pull and prepare HVAC/R equipment and components for shipment. This is an excellent position to learn about the HVAC/R industry.
+Includes careers related to constructing new green buildings, retrofitting residential and commercial buildings, and installing other green construction technology.

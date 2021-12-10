@@ -1,5 +1,5 @@
 ---
-title: 'Agriculture and forestry'
+title: 'Agriculture and Forestry'
 custom:
     careerType: Residential
     careerLink: 'https://hvaccareermap.org/jobs/residential-trainee'

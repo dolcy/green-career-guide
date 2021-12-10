@@ -1,5 +1,5 @@
 ---
-title: Tradesperson
+title: 'Energy Trading'
 custom:
     careerType: Commercial
     careerLink: 'https://hvaccareermap.org/jobs/tradesperson'
@@ -10,4 +10,4 @@ custom:
 published: true
 ---
 
-The Tradesperson is a stage in an HVAC/R career path with progression based on experience, education, and training. Working under the supervision of journey-level technician or lead installer, the Tradesperson assists in the installation and maintenance of HVAC/R equipment.
+Includes careers related to buying and selling energy as an economic commodity, as well as carbon trading projects.

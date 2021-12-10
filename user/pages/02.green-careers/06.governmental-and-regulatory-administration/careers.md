@@ -1,5 +1,5 @@
 ---
-title: 'Apprentice '
+title: 'Governmental and Regulatory Administration'
 custom:
     careerType: Commercial
     careerLink: 'https://hvaccareermap.org/jobs/apprentice'
@@ -10,4 +10,4 @@ custom:
 published: true
 ---
 
-The HVAC/R Apprentice position allows individuals to learn the skills required of the commercial HVAC/R installation and service trade while working in a full-time paid employment position with on-the-job training from experienced HVAC journey-level technicians as well as company-provided structured apprenticeship training classes.
+Includes careers by public and private organizations associated with conservation and pollution prevention, regulation enforcement, and policy analysis and advocacy.

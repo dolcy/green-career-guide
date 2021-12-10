@@ -1,5 +1,5 @@
 ---
-title: 'Residential Installer '
+title: 'Energy and Carbon Capture/Storage'
 custom:
     careerType: Residential
     careerLink: 'https://hvaccareermap.org/jobs/residential-installer'
@@ -10,4 +10,4 @@ custom:
 published: true
 ---
 
-HVAC Residential Installers are responsible for installing heating, ventilation, and air conditioning equipment in customers’ homes following manufacturer specifications, industry codes and standards, and company requirements.
+Includes careers related to capturing and storing energy and/or carbon emissions, as well as technologies related to power plants using the integrated gasification combined cycle (IGCC) technique.

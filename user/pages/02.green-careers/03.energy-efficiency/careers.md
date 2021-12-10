@@ -1,5 +1,5 @@
 ---
-title: 'Commercial Trainee'
+title: 'Energy Efficiency'
 custom:
     careerType: Commercial
     careerLink: 'https://hvaccareermap.org/jobs/commercial-trainee'
